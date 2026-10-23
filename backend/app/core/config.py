@@ -34,6 +34,12 @@ class Settings(BaseSettings):
     # Fapshi POSTs payment status here; must be publicly reachable.
     fapshi_webhook_secret: str = ""
 
+    # --- Sign in with Google / Apple ---
+    # These are AUDIENCE values: the OAuth client ids the ID tokens are minted
+    # for. Verification fails closed when they are blank.
+    google_client_id: str = ""
+    apple_client_id: str = ""   # the app's bundle id, e.g. com.nexly.app
+
     # --- LiveKit (live classroom) ---
     livekit_url: str = "wss://localhost:7880"
     livekit_api_key: str = ""

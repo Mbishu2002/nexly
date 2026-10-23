@@ -263,7 +263,7 @@ export const mockAdapter: NexlyApi = {
     return delay(found ? mapThread(found, locale) : null);
   },
 
-  sendMessage: (threadId, text, { locale }): Promise<Thread[]> => {
+  sendMessage: (threadId, text, { locale }): Promise<Thread> => {
     threadState = threadState.map((t) =>
       t.id === threadId
         ? {
@@ -274,7 +274,9 @@ export const mockAdapter: NexlyApi = {
           }
         : t,
     );
-    return delay(threadState.map((t) => mapThread(t, locale)));
+    const updated = threadState.find((t) => t.id === threadId);
+    if (!updated) throw new Error(`No such thread: ${threadId}`);
+    return delay(mapThread(updated, locale));
   },
 
   getAvailability: (_teacherId, { locale }): Promise<DaySlots[]> =>

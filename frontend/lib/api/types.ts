@@ -382,7 +382,9 @@ export type NexlyApi = {
   requestReschedule(input: { lessonId: string }, o: RequestOptions): Promise<{ ref: string; message: string }>;
   listThreads(o: RequestOptions): Promise<Thread[]>;
   getThread(id: string, o: RequestOptions): Promise<Thread | null>;
-  sendMessage(threadId: string, text: string, o: RequestOptions): Promise<Thread[]>;
+  /** Returns the updated thread, not the whole list: the only caller is the
+   *  open conversation, and resending every thread per message is wasteful. */
+  sendMessage(threadId: string, text: string, o: RequestOptions): Promise<Thread>;
 
   getAvailability(teacherId: string, o: RequestOptions): Promise<DaySlots[]>;
   listLessonTypes(o: RequestOptions): Promise<LessonType[]>;

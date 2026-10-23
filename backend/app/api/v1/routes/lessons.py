@@ -50,7 +50,9 @@ def _humanise_date(when: datetime, tz: str, locale: Locale) -> str:
         ]
         return f"{days[local.weekday()].capitalize()} {local.day} {months[local.month - 1]}"
 
-    return local.strftime("%A %-d %b") if hasattr(local, "strftime") else local.isoformat()
+    # Build this by hand rather than with "%-d": that is a glibc extension and
+    # raises ValueError on Windows.
+    return f"{local.strftime('%A')} {local.day} {local.strftime('%b')}"
 
 
 def _countdown(when: datetime, tz: str, locale: Locale) -> str:

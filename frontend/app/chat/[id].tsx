@@ -37,8 +37,7 @@ export default function Chat() {
     const text = draft.trim();
     if (!text) return;
     setDraft("");
-    const all = await api.sendMessage(thread.id, text, { locale });
-    setOverride(all.find((x) => x.id === thread.id) ?? null);
+    setOverride(await api.sendMessage(thread.id, text, { locale }));
   };
 
   return (

@@ -20,6 +20,8 @@ docker compose up -d
 python -m venv .venv && .venv/Scripts/activate
 pip install -e ".[dev]"
 cp .env.example .env
+alembic upgrade head
+python -m app.db.seed                # learner + teacher dev accounts
 uvicorn app.main:app --reload        # http://localhost:8000/docs
 
 # App
@@ -43,9 +45,18 @@ which is also the wire format `backend/app/schemas.py` must satisfy. Flipping
 `USE_MOCK` to `false` and setting `EXPO_PUBLIC_API_URL` moves the app onto the
 real server without touching a single screen.
 
-**The app is still on the mock adapter.** The backend runs and its contract
-tests pass, but it has no migrations or seed data yet, so the switch has not
-been thrown. See "Built, and not yet built" in `backend/README.md`.
+Every route the app calls is implemented, migrated and seeded. The app is
+still pointed at the mock adapter by default; flip it when you want to develop
+against the server:
+
+```bash
+cd backend && alembic upgrade head && python -m app.db.seed && uvicorn app.main:app --reload
+# then in frontend/lib/api/index.ts set USE_MOCK = false
+# and export EXPO_PUBLIC_API_URL=http://localhost:8000
+```
+
+`backend/tests/test_contract_coverage.py` parses the route list straight out of
+`frontend/lib/api/httpAdapter.ts`, so the two cannot drift apart silently.
 
 ### Language
 
@@ -85,8 +96,9 @@ indistinguishable.
 | Web | Vite + React *(not started)* |
 | API | FastAPI (Python 3.12+) |
 | Database | PostgreSQL — Neon in staging/production |
-| Live video | LiveKit |
+| Live video | LiveKit (tokens + room webhooks) |
 | Payments | Fapshi mobile money, **web only** |
+| Auth | email + password, Google, Apple |
 | Jobs | Redis + Arq |
 | Storage / CDN | Cloudflare R2 *(not started)* |
 | Email / Push | Resend, FCM *(not started)* |
