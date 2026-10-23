@@ -734,3 +734,72 @@ class ClassroomJoin(BaseModel):
     room: str
     identity: str
     session: ClassroomSession
+
+
+# ==========================================================================
+# Media
+# ==========================================================================
+
+
+class UploadRequest(BaseModel):
+    kind: str = Field(description="lesson_intro | course_lesson | homework_audio | report_evidence")
+    filename: str = Field(min_length=1, max_length=255)
+    contentType: str
+    sizeBytes: int = Field(gt=0)
+
+
+class UploadTicket(BaseModel):
+    assetId: str
+    uploadUrl: str
+    headers: dict[str, str]
+    expiresIn: int
+
+
+class MediaAssetOut(BaseModel):
+    id: str
+    kind: str
+    status: str
+    contentType: str
+    sizeBytes: int
+    durationSeconds: int
+
+
+class MediaPlayback(BaseModel):
+    assetId: str
+    url: str
+    expiresIn: int
+
+
+# ==========================================================================
+# Push registration
+# ==========================================================================
+
+
+class DeviceTokenIn(BaseModel):
+    token: str = Field(min_length=8, max_length=512)
+    platform: str = Field(pattern="^(ios|android|web)$")
+
+
+# ==========================================================================
+# Group sessions
+# ==========================================================================
+
+
+class GroupSessionOut(BaseModel):
+    id: str
+    topic: str
+    teacher: str
+    teacherId: str
+    date: str
+    time: str
+    tz: str
+    duration: int
+    capacity: int
+    booked: int
+    seatsLeft: int
+    joined: bool
+
+
+class JoinGroupOut(BaseModel):
+    id: str
+    seatsLeft: int

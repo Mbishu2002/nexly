@@ -99,9 +99,11 @@ indistinguishable.
 | Live video | LiveKit (tokens + room webhooks) |
 | Payments | Fapshi mobile money, **web only** |
 | Auth | email + password, Google, Apple |
-| Jobs | Redis + Arq |
-| Storage / CDN | Cloudflare R2 *(not started)* |
-| Email / Push | Resend, FCM *(not started)* |
+| Jobs | Redis + Arq (reminders, settlement, transcoding) |
+| Messaging | WebSocket + Redis pub/sub |
+| Storage / CDN | Cloudflare R2 (signed upload + playback) |
+| Email / Push | Resend, Firebase Cloud Messaging |
+| Analytics | PostHog (server-side) |
 
 Full reasoning, the phased roadmap and the open decisions are in
 `design/stitch/_ARCHITECTURE_PLAN.md`.

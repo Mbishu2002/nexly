@@ -5,14 +5,17 @@ from app.api.v1.routes import (
     auth,
     booking,
     classroom,
+    groups,
     learner,
     lessons,
+    media,
     onboarding,
     payments,
     quizzes,
     teacher_portal,
     teachers,
     threads,
+    ws,
 )
 
 api_router = APIRouter(prefix="/v1")
@@ -28,6 +31,11 @@ api_router.include_router(lessons.router)
 api_router.include_router(threads.router)
 api_router.include_router(booking.router)
 api_router.include_router(quizzes.router)
+api_router.include_router(groups.router)
+api_router.include_router(media.router)
+
+# Live messaging over WebSocket.
+api_router.include_router(ws.router)
 
 # Shared live session
 api_router.include_router(classroom.router)

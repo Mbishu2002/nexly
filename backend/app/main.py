@@ -1,10 +1,32 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.router import api_router
 from app.core.config import settings
+from app.services.realtime import hub
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Hold the Redis pub/sub connection for the life of the process.
+
+    Messaging fans out through Redis so sockets on different workers see each
+    other; without this the hub falls back to local-only delivery, which looks
+    correct on one worker and breaks on two.
+    """
+    try:
+        await hub.connect_redis()
+    except Exception:  # pragma: no cover - Redis down at boot
+        # Local delivery still works, so the API stays up rather than refusing
+        # to start over a messaging dependency.
+        pass
+    yield
+    await hub.close()
 
 app = FastAPI(
+    lifespan=lifespan,
     title="Nexly API",
     version="0.1.0",
     description=(

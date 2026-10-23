@@ -27,6 +27,7 @@ dependencies = [
   "httpx>=0.28",
   "arq>=0.26",
   "redis>=5.2",
+  "boto3>=1.35",
 ]
 
 [project.optional-dependencies]
@@ -45,3 +46,5 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Async tests are marked explicitly rather than auto-detected.
+asyncio_mode = "strict"

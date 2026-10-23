@@ -228,6 +228,10 @@ class Lesson(Base, TimestampMixin):
     teacher_note_fr: Mapped[str] = mapped_column(Text, default="")
     teacher_note_en: Mapped[str] = mapped_column(Text, default="")
 
+    # Group sessions: 1 means one-to-one and `student_id` is the learner.
+    # Above 1, LessonParticipant rows hold the roster. The MVP caps this at 6.
+    capacity: Mapped[int] = mapped_column(Integer, default=1)
+
     # LiveKit room name, minted on first join.
     room_name: Mapped[str | None] = mapped_column(String(120))
 
@@ -527,3 +531,127 @@ class LearnerNote(Base, TimestampMixin):
     body: Mapped[str] = mapped_column(Text, default="")
     kind: Mapped[str] = mapped_column(String(16), default="text")  # text|audio|goal|info
     attachment: Mapped[dict] = mapped_column(JSONType, default=dict)
+
+
+# --------------------------------------------------------------------------
+# Group sessions
+# --------------------------------------------------------------------------
+
+
+class LessonParticipant(Base, TimestampMixin):
+    """A learner in a group session.
+
+    One-to-one lessons keep using `Lesson.student_id`; a group lesson has rows
+    here instead. Capacity is enforced in the booking route against
+    `Lesson.capacity`, which the MVP caps at six per the architecture plan.
+    """
+
+    __tablename__ = "lesson_participants"
+    __table_args__ = (UniqueConstraint("lesson_id", "user_id"),)
+
+    id: Mapped[str] = mapped_column(IdType, primary_key=True, default=_uuid)
+    lesson_id: Mapped[str] = mapped_column(ForeignKey("lessons.id", ondelete="CASCADE"))
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    # "booked" | "attended" | "no_show" | "cancelled"
+    state: Mapped[str] = mapped_column(String(16), default="booked")
+
+
+# --------------------------------------------------------------------------
+# Media
+# --------------------------------------------------------------------------
+
+
+class MediaAsset(Base, TimestampMixin):
+    """A file in R2, plus whatever the transcoder has made of it.
+
+    The row is created when an upload is *requested*, before any bytes exist,
+    so an abandoned upload is visible rather than invisible.
+    """
+
+    __tablename__ = "media_assets"
+
+    id: Mapped[str] = mapped_column(IdType, primary_key=True, default=_uuid)
+    owner_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+
+    # "lesson_intro" | "course_lesson" | "homework_audio" | "report_evidence"
+    kind: Mapped[str] = mapped_column(String(32), index=True)
+    # Key in the bucket. Never a public URL: paid media is served signed.
+    storage_key: Mapped[str] = mapped_column(String(512), unique=True)
+    content_type: Mapped[str] = mapped_column(String(128), default="")
+    size_bytes: Mapped[int] = mapped_column(Integer, default=0)
+
+    # "pending" | "uploaded" | "processing" | "ready" | "failed" | "rejected"
+    status: Mapped[str] = mapped_column(String(16), default="pending", index=True)
+    duration_seconds: Mapped[int] = mapped_column(Integer, default=0)
+    # HLS renditions written by the transcoder: [{height, bitrate, key}, ...]
+    renditions: Mapped[list] = mapped_column(JSONType, default=list)
+    thumbnail_key: Mapped[str | None] = mapped_column(String(512))
+    error: Mapped[str] = mapped_column(Text, default="")
+
+
+# --------------------------------------------------------------------------
+# Notifications
+# --------------------------------------------------------------------------
+
+
+class DeviceToken(Base, TimestampMixin):
+    """An FCM registration token for one install of the app."""
+
+    __tablename__ = "device_tokens"
+
+    id: Mapped[str] = mapped_column(IdType, primary_key=True, default=_uuid)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    token: Mapped[str] = mapped_column(String(512), unique=True, index=True)
+    platform: Mapped[str] = mapped_column(String(16))  # "ios" | "android" | "web"
+    # FCM tells us when a token dies; keep the row but stop sending to it.
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    last_seen_at: Mapped[datetime] = mapped_column(UtcDateTime, default=_now)
+
+
+class NotificationLog(Base):
+    """One row per delivery attempt.
+
+    Exists so a reminder is sent once: the worker checks for a row with the
+    same (user, kind, dedupe_key) before sending, which makes a re-run of a
+    cron job harmless.
+    """
+
+    __tablename__ = "notification_log"
+    __table_args__ = (UniqueConstraint("user_id", "kind", "dedupe_key"),)
+
+    id: Mapped[str] = mapped_column(IdType, primary_key=True, default=_uuid)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    kind: Mapped[str] = mapped_column(String(48), index=True)
+    dedupe_key: Mapped[str] = mapped_column(String(128))
+    channel: Mapped[str] = mapped_column(String(16))  # "push" | "email"
+    status: Mapped[str] = mapped_column(String(16), default="sent")
+    detail: Mapped[str] = mapped_column(Text, default="")
+    created_at: Mapped[datetime] = mapped_column(UtcDateTime, default=_now, index=True)
+
+
+# --------------------------------------------------------------------------
+# Automated moderation
+# --------------------------------------------------------------------------
+
+
+class ModerationFlag(Base, TimestampMixin):
+    """Something a classifier objected to.
+
+    Separate from `Report`, which is a human complaint. Both feed the same
+    admin queue, but only this one can be created without a person.
+    """
+
+    __tablename__ = "moderation_flags"
+
+    id: Mapped[str] = mapped_column(IdType, primary_key=True, default=_uuid)
+    # "message" | "media" | "profile"
+    subject_type: Mapped[str] = mapped_column(String(32), index=True)
+    subject_id: Mapped[str] = mapped_column(String(64), index=True)
+    user_id: Mapped[str | None] = mapped_column(ForeignKey("users.id", ondelete="SET NULL"))
+
+    category: Mapped[str] = mapped_column(String(48))  # harassment, sexual, ...
+    score: Mapped[float] = mapped_column(Numeric(4, 3), default=0)
+    source: Mapped[str] = mapped_column(String(32), default="heuristic")
+    # "open" | "actioned" | "dismissed"
+    status: Mapped[str] = mapped_column(String(16), default="open", index=True)
+    detail: Mapped[str] = mapped_column(Text, default="")

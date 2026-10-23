@@ -45,8 +45,52 @@ class Settings(BaseSettings):
     livekit_api_key: str = ""
     livekit_api_secret: str = ""
 
+    # --- Cloudflare R2 (S3-compatible object storage) ---
+    r2_account_id: str = ""
+    r2_access_key_id: str = ""
+    r2_secret_access_key: str = ""
+    r2_bucket: str = "nexly-media"
+    # Public CDN hostname in front of the bucket. Signed URLs are issued
+    # against it so paid media cannot be shared as a plain link.
+    r2_public_base_url: str = ""
+    upload_url_ttl_seconds: int = 900
+    playback_url_ttl_seconds: int = 3600
+    max_upload_bytes: int = 512 * 1024 * 1024
+
+    # --- Resend (transactional email) ---
+    resend_api_key: str = ""
+    email_from: str = "Nexly <no-reply@nexly.app>"
+
+    # --- Firebase Cloud Messaging (push) ---
+    # Path to the service-account JSON; the file itself is never committed.
+    fcm_project_id: str = ""
+    fcm_credentials_file: str = ""
+
+    # --- PostHog (product analytics) ---
+    posthog_api_key: str = ""
+    posthog_host: str = "https://eu.i.posthog.com"
+
+    # --- Moderation ---
+    # A hosted classifier endpoint. Empty falls back to the local heuristic,
+    # which catches the obvious cases and nothing subtle.
+    moderation_api_url: str = ""
+    moderation_api_key: str = ""
+    moderation_block_threshold: float = 0.85
+    moderation_flag_threshold: float = 0.50
+
+    # --- Group sessions ---
+    # The architecture plan caps MVP group size; above this is Phase 2.
+    max_group_size: int = 6
+
+    # --- Reminders ---
+    booking_reminder_lead_minutes: int = 60
+
     # Platform take rate, applied when writing the ledger entry for a booking.
     platform_fee_bps: int = 1500  # 15.00%
+
+    # How long a ledger entry is held before it becomes payable, covering the
+    # refund window and any dispute.
+    payout_hold_hours: int = 48
 
 
 @lru_cache

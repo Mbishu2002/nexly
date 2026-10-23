@@ -17,6 +17,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import NullPool, StaticPool
 
 from app.core.security import create_access_token, hash_password
+from app.api.v1.routes.ws import get_session_factory
 from app.db.session import Base, get_db
 from app.main import app
 from app.models import (
@@ -82,7 +83,13 @@ def client_fixture(engine, db):
     def override() -> object:
         yield db
 
+    # WebSocket routes open their own short-lived sessions rather than holding
+    # one for the life of the socket, so they take a factory instead of a
+    # session. Point it at the same test engine.
+    TestSession = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
+
     app.dependency_overrides[get_db] = override
+    app.dependency_overrides[get_session_factory] = lambda: TestSession
     with TestClient(app) as c:
         yield c
     app.dependency_overrides.clear()

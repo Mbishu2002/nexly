@@ -13,6 +13,9 @@ cp .env.example .env                              # then fill in the blanks
 alembic upgrade head
 python -m app.db.seed                             # dev data matching the app's fixtures
 uvicorn app.main:app --reload
+
+# in a second terminal -- reminders, payout settlement, transcoding
+arq app.worker.WorkerSettings
 ```
 
 Interactive docs at <http://localhost:8000/docs>.
@@ -27,7 +30,7 @@ pytest                                                    # SQLite, no services 
 TEST_DATABASE_URL=postgresql+psycopg://nexly:nexly@localhost:5432/nexly_test pytest
 ```
 
-76 tests, green on both. SQLite keeps the suite fast; the Postgres run
+121 tests, green on both. SQLite keeps the suite fast; the Postgres run
 exercises the `JSONB` and `TIMESTAMPTZ` paths SQLite cannot, so a bug that only
 appears on the real database still gets caught.
 
@@ -110,6 +113,119 @@ verified that address.
 Tokens are signed JWTs carrying a `video` grant. Unconfigured LiveKit returns
 503 rather than handing out something unusable.
 
+## Live messaging (WebSocket)
+
+`/v1/ws/threads/{id}?token=<jwt>` — the token is a query parameter because
+React Native's WebSocket cannot set headers.
+
+Frames in: `message`, `typing`, `read`, `ping`.
+Frames out: `message`, `typing`, `read`, `pong`, `error`.
+
+**Fan-out goes through Redis pub/sub, not an in-memory registry.** A socket is
+held by one process, so with two API workers a message sent on worker A would
+never reach a socket on worker B — and an in-memory map looks perfectly
+correct on one worker in development, which is what makes it dangerous. Local
+delivery is the last hop of the same path, so the single- and multi-worker
+cases cannot diverge.
+
+Sessions are opened **per frame**, not held for the life of the socket. A chat
+connection can stay open for an hour; a pooled connection per socket would let
+a few hundred idle chats exhaust the database.
+
+Blocks are re-checked on every message rather than at connect, because a block
+can be set while the socket is open. Each message is classified before it is
+stored, so a withheld message never lands in the thread at all.
+
+## Background jobs (Arq)
+
+    arq app.worker.WorkerSettings
+
+| Job | Trigger | Notes |
+|---|---|---|
+| `send_message_push` | queued from the socket | so FCM latency never stalls a chat |
+| `send_booking_confirmation` | queued on booking | |
+| `transcode_media` | queued on upload completion | seam only; see below |
+| `send_booking_reminders` | every 5 min | de-duplicated by `NotificationLog` |
+| `settle_ledger` | 03:00 daily | `held` → `payable` after the refund window |
+| `reap_abandoned_uploads` | 04:00 daily | rows whose bytes never arrived |
+| `run_payout_batch` | Fridays 06:00 | **reports only, moves no money** |
+
+Every cron job is idempotent: Arq can re-run one after a restart, and "twice"
+must not mean two reminders or two payouts.
+
+`settle_ledger` releases money only for lessons that actually **completed** — a
+held entry on a cancelled or no-show session must not become payable just
+because time passed. `run_payout_batch` deliberately stops at reporting: which
+providers expose a disbursement API is still an open decision in the
+architecture plan, and moving money on a schedule before that is settled is
+the wrong kind of automatic.
+
+## Media (Cloudflare R2)
+
+Three steps, so the server never proxies bytes:
+
+```
+POST /v1/media/uploads        -> presigned PUT + asset id
+PUT  <presigned url>          -> client uploads straight to R2
+POST /v1/media/{id}/complete  -> verify the object, queue transcoding
+GET  /v1/media/{id}           -> short-lived signed playback URL
+```
+
+- **Nothing is public.** Paid lesson video must not be shareable as a plain
+  link, so playback is always signed and short-lived.
+- The uploader's filename never becomes the storage key — it is
+  attacker-controlled and would allow overwriting someone else's object.
+- `ContentType` and `ContentLength` are inside the signature, so a URL issued
+  for a 5 MB audio clip cannot be used to upload a 2 GB executable.
+- "Upload finished" from a client is a claim, not evidence: `/complete`
+  HEADs the object before anything downstream depends on it.
+
+**The ffmpeg encoder is not implemented.** `transcode_media` records state and
+handles audio (which needs no renditions); HLS transcoding drops in behind it
+once the open decision — self-managed ffmpeg versus Cloudflare Stream or Mux —
+is settled.
+
+## Notifications
+
+Resend for email, FCM HTTP v1 for push. Both senders return a result instead
+of raising: a booking is still a booking if the confirmation email bounces.
+
+`NotificationLog` is keyed on `(user, kind, dedupe_key)`, so a re-run of the
+reminder cron is a no-op rather than a second buzz at 6am. Tokens FCM reports
+as `UNREGISTERED` are deactivated, not deleted. A device token that reappears
+under a different account is reassigned, not duplicated — otherwise the
+previous owner of a shared handset keeps receiving the new owner's messages.
+
+## Automated moderation
+
+Two tiers: a hosted classifier when `MODERATION_API_URL` is set, otherwise a
+local heuristic. If the hosted call fails the heuristic still runs, because an
+outage must not silently mean "everything is fine".
+
+The heuristic is deliberately narrow — off-platform payment steering, contact
+details being swapped, a handful of slurs — and it is a floor, not a
+substitute for the hosted classifier or for human review. **Nothing
+auto-bans.** The strongest action is withholding one message and opening a
+`ModerationFlag` for a person to look at.
+
+## Analytics (PostHog)
+
+Server-side capture, so funnel events survive the app being closed mid-flow.
+Fire-and-forget: an analytics outage must not become a 500 on a booking.
+
+Event properties are filtered against a deny-list before sending — no message
+text, comments, notes, emails, phone numbers or names ever leave the system.
+Analytics is the easiest place for personal data to leak out unnoticed, and
+this is a marketplace with minors' schooling on it.
+
+## Group sessions
+
+A group lesson is a `Lesson` with `capacity > 1`; its roster lives in
+`LessonParticipant`. Joining locks the roster before counting seats, or two
+learners racing for the last one both read "1 left" and both get in. Leaving
+before the start refunds the credit. `MAX_GROUP_SIZE` (default 6) is enforced,
+per the MVP cap in the architecture plan.
+
 ## Teacher payouts
 
 Fapshi has no native marketplace split, so `LedgerEntry` records gross,
@@ -168,12 +284,13 @@ app/
 
 ## Not yet built
 
-- **Admin dashboard** — reports, blocks and the moderation queue are modelled
-  and populated, but nothing renders them.
-- **Web front end** — Vite + React. This is where checkout has to live, so it
-  is the real blocker for revenue.
-- **Arq jobs** — Redis is running; no workers yet. Needed for payout runs,
-  booking reminders and transcoding.
-- **Media pipeline** — R2 uploads, ffmpeg transcoding, signed CDN URLs.
-- **Push and email** — FCM and Resend.
-- **Group sessions**, automated content moderation, PostHog. All Phase 2.
+- **Admin dashboard** — reports, blocks and moderation flags are modelled and
+  populated, but nothing renders them. This is an App Review requirement.
+- **Web front end** — Vite + React. Checkout has to live there, so it is the
+  real blocker for revenue.
+- **ffmpeg / HLS transcoding** — `transcode_media` is the seam; the encoder
+  is not written. Pending the Stream-vs-Mux-vs-self-managed decision.
+- **Course entitlements** — `GET /v1/media/{id}` currently allows the owner
+  only. Serving a purchased course to its buyer needs an entitlement check.
+- **Provider disbursement** — `run_payout_batch` reports; it does not pay.
+- **Certificates, accreditation, PostHog dashboards.**
