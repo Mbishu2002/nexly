@@ -13,6 +13,7 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, status
 
 from app.api.deps import CurrentUser, DbSession
+from app.core.config import settings
 from app.models import DeviceToken, MediaAsset
 from app.schemas import (
     DeviceTokenIn,
@@ -117,7 +118,7 @@ def get_playback(asset_id: str, db: DbSession, user: CurrentUser) -> MediaPlayba
         raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, str(exc)) from exc
 
     return MediaPlayback(
-        assetId=asset.id, url=url, expiresIn=asset.renditions and 0 or 3600
+        assetId=asset.id, url=url, expiresIn=settings.playback_url_ttl_seconds
     )
 
 

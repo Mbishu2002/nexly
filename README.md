@@ -107,3 +107,13 @@ indistinguishable.
 
 Full reasoning, the phased roadmap and the open decisions are in
 `design/stitch/_ARCHITECTURE_PLAN.md`.
+
+## What's left
+
+See **[TODO.md](TODO.md)** — everything outstanding, grouped by what it
+blocks, with the open decisions from the architecture plan called out
+separately.
+
+The short version: the backend is complete and tested, but nothing is
+deployed, the app still runs on its mock adapter with no sign-in screen, and
+there is no web front end — which is where checkout has to live.

@@ -284,13 +284,8 @@ app/
 
 ## Not yet built
 
-- **Admin dashboard** — reports, blocks and moderation flags are modelled and
-  populated, but nothing renders them. This is an App Review requirement.
-- **Web front end** — Vite + React. Checkout has to live there, so it is the
-  real blocker for revenue.
-- **ffmpeg / HLS transcoding** — `transcode_media` is the seam; the encoder
-  is not written. Pending the Stream-vs-Mux-vs-self-managed decision.
-- **Course entitlements** — `GET /v1/media/{id}` currently allows the owner
-  only. Serving a purchased course to its buyer needs an entitlement check.
-- **Provider disbursement** — `run_payout_batch` reports; it does not pay.
-- **Certificates, accreditation, PostHog dashboards.**
+See **[../TODO.md](../TODO.md)** for the full list and what each item is
+waiting on. The backend-side headlines: no admin dashboard (an App Review
+requirement), no ffmpeg encoder behind `transcode_media`, no course
+entitlement check on media playback, and `run_payout_batch` reports without
+paying.
