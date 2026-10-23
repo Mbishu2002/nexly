@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#1e56a0", "inverse-surface": "#283044", "on-tertiary-fixed-variant": "#005049", "surface-variant": "#dae2fd", "primary-fixed": "#d6e3ff", "background": "#faf8ff", "error-container": "#ffdad6", "surface-tint": "#295ea8", "primary-fixed-dim": "#aac7ff", "surface-container-highest": "#dae2fd", "error": "#ba1a1a", "on-background": "#131b2e", "on-tertiary-fixed": "#00201d", "tertiary": "#004842", "outline-variant": "#c2c6d3", "on-primary-fixed": "#001b3e", "on-error-container": "#93000a", "tertiary-container": "#00625a", "on-tertiary-container": "#72dfd1", "on-secondary-container": "#5d2300", "on-tertiary": "#ffffff", "on-secondary-fixed": "#341000", "secondary-fixed-dim": "#ffb693", "surface-container-high": "#e2e7ff", "surface": "#faf8ff", "tertiary-fixed": "#89f5e7", "secondary-container": "#fc7728", "on-surface": "#131b2e", "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "secondary": "#a04100", "on-secondary": "#ffffff", "outline": "#737782", "on-error": "#ffffff", "on-secondary-fixed-variant": "#7a3000", "surface-container": "#eaedff", "surface-bright": "#faf8ff", "tertiary-fixed-dim": "#6bd8cb", "secondary-fixed": "#ffdbcb", "on-primary-container": "#b4cdff", "on-primary-fixed-variant": "#00458d", "on-surface-variant": "#424751", "surface-dim": "#d2d9f4", "primary": "#003e80", "inverse-on-surface": "#eef0ff", "inverse-primary": "#aac7ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem", "space-md": "1rem", "margin-desktop": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><button aria-label="Retour" class="w-11 h-11 flex items-center justify-center -ml-space-xs text-on-surface hover:text-primary-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex items-center gap-space-xs flex-1 min-w-0 justify-center"><div class="w-7 h-7 rounded-md bg-primary-container flex items-center justify-center text-on-primary shrink-0 shadow-sm"><span class="material-symbols-outlined text-[16px]">cruelty_free</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Postuler comme Enseignant</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Aide ou Fermer" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary-container transition-colors" onclick="window.close()"><span class="material-symbols-outlined text-[22px]">help_outline</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe px-margin bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Value Prop & Trust Banner -->
+<div class="mb-4 bg-gradient-to-br from-primary-container to-primary rounded-xl p-4 text-on-primary shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-secondary-container opacity-20 pointer-events-none"></div>
+<div class="relative z-10 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/15 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px] text-tertiary-fixed">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-headline-sm text-headline-sm tracking-tight">Rejoignez l'élite Nexly</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">1er Réseau</span>
+</div>
+<p class="font-body-sm text-body-sm opacity-90 leading-snug">
+          Transmettez vos langues patrimoniales du Cameroun. Rémunération sécurisée chaque lundi via <span class="font-label-md font-semibold text-secondary-fixed">MTN MoMo</span> ou <span class="font-label-md font-semibold text-secondary-fixed">Orange Money</span>.
+        </p>
+</div>
+</div>
+</div>
+<!-- Progress Stepper Card -->
+<div class="mb-5 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Candidature Tuteur</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Étape 3 sur 4 : Vidéo &amp; Identité</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md">75% terminé</span>
+</div>
+<!-- Multi-step bar -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<div class="flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-primary-container"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Profil</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-primary-container"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Diplômes</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-secondary-container"></div>
+<div class="flex items-center gap-1">
+<div class="w-3 h-3 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Vidéo</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-surface-container-high"></div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-surface-container-high"></span>
+<span class="font-label-sm text-label-sm text-outline truncate">Dispos</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 1: Intro Video -->
+<div class="mb-5 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Vidéo de Présentation</h2>
+<p class="font-body-sm text-body-sm text-outline">Face caméra • 1 à 2 minutes max</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">Obligatoire</span>
+</div>
+<!-- Video Preview Component with Overlay -->
+<div class="relative w-full rounded-xl overflow-hidden aspect-video bg-inverse-surface shadow-inner flex items-center justify-center group cursor-pointer" id="video-preview-box">
+<img class="absolute inset-0 w-full h-full object-cover opacity-85" data-alt="Portrait chaleureux d'une enseignante camerounaise souriante parlant face caméra dans un salon lumineux à Douala, vêtue d'un pagne moderne aux teintes bleu royal et orange vif, éclairage naturel, qualité broadcast EdTech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYHpSGmwCzR9R-FPfrI2YCUAsaGNs35JQBlMxfqyyZWmjSFbPo-a8W8EBo1pklEP4yRIfTM5mFPqTFW1L1nxIbPKLRmjKkQOooIuZSrMnONQTNBP35vDyF6rEwK_WvfxHNRYUHc5cygONL0SuUMb0CPRD3bfjY5XA_PBrqFzOUv8_nZCJday_XMRjV87Va98cNNEL-V4vEkBsSIwskwb4F6IeMvj9If7AzkLndJgsMbptRuAEp-8uo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-transparent to-inverse-surface/40"></div>
+<!-- Live Tag -->
+<div class="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-inverse-on-surface font-semibold">1:45 Enregistré</span>
+</div>
+<!-- Resolution Pill -->
+<div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm font-semibold">
+        1080p FHD
+      </div>
+<!-- Central Play Trigger -->
+<button aria-label="Lire la vidéo" class="relative z-10 w-13 h-13 rounded-full bg-secondary-container text-on-secondary shadow-lg flex items-center justify-center active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<!-- Bottom Audio Visualizer Bar -->
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-inverse-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">mic</span>
+<span class="font-label-sm text-label-sm">Son clair (Micro sans fil)</span>
+</div>
+<div class="flex items-end gap-0.5 h-3">
+<div class="w-1 h-2 bg-tertiary-fixed rounded-full"></div>
+<div class="w-1 h-3 bg-tertiary-fixed rounded-full"></div>
+<div class="w-1 h-1.5 bg-tertiary-fixed rounded-full"></div>
+<div class="w-1 h-3 bg-tertiary-fixed rounded-full"></div>
+<div class="w-1 h-2 bg-tertiary-fixed rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Prompts Guide Accordion -->
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-2">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">tips_and_updates</span>
+        Structure attendue par la commission :
+      </span>
+<ul class="flex flex-col gap-1.5 pl-1">
+<li class="flex items-start gap-2">
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">1</span>
+<p class="font-body-sm text-body-sm text-on-surface">Salutations et présentation fluide dans votre langue maternelle (ex: <em>Douala, Ewondo, Bamiléké</em>).</p>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">2</span>
+<p class="font-body-sm text-body-sm text-on-surface">Explication de votre méthode pédagogique en Français ou Anglais.</p>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center shrink-0 mt-0.5">3</span>
+<p class="font-body-sm text-body-sm text-on-surface">Un mini-conseil d'intonation ou de prononciation pour rassurer l'apprenant en diaspora.</p>
+</li>
+</ul>
+</div>
+<!-- Status Box & Action Buttons -->
+<div class="bg-surface-container rounded-lg p-3 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="min-w-0 flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate">Vidéo_Presentation_Henriette.mp4</span>
+<span class="font-body-sm text-body-sm text-outline">18.4 Mo • Prête pour analyse IA &amp; jury</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+          Visionner
+        </button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container-lowest text-secondary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+          Recommencer
+        </button>
+</div>
+</div>
+</div>
+<!-- Section 2: Identity & Teaching Credentials Verification -->
+<div class="mb-5 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">badge</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Identité &amp; Justificatifs</h2>
+<p class="font-body-sm text-body-sm text-outline">Exigé pour le badge vérifié &amp; décaissement mobile</p>
+</div>
+</div>
+<!-- Document 1: CNI Camerounaise -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">id_card</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<span class="font-label-md text-label-md text-on-surface truncate">CNI Camerounaise (Recto / Verso)</span>
+<span class="font-body-sm text-body-sm text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+            Téléversée &amp; Validité conforme (2028)
+          </span>
+</div>
+</div>
+<button aria-label="Modifier le document" class="w-8 h-8 rounded-md bg-surface-container text-outline hover:text-on-surface flex items-center justify-center shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+<!-- Document 2: Credentials & Traditional Attestation -->
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center justify-between gap-2">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div class="min-w-0 flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface truncate">Diplôme de Linguistique / Chefferie</span>
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline truncate">Attestation_Univ_Yde_I.pdf (1.8 Mo)</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold shrink-0">Vérifié</span>
+</div>
+<!-- Fast verification notice -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-primary-fixed/50 text-on-primary-fixed">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">lock</span>
+<p class="font-label-sm text-label-sm leading-tight">Vos documents sont chiffrés de bout en bout et exclusivement consultés par les modérateurs légaux Nexly.</p>
+</div>
+</div>
+<!-- Section 3: Native Dialects Mastery Declaration -->
+<div class="mb-5 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">translate</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Langues Enseignées &amp; Ancrage</h2>
+<p class="font-body-sm text-body-sm text-outline">Visibilité ciblée sur les recherches élèves</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Primary Language Chip Row -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Douala (Duala)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">Langue Maternelle (Natif)</span>
+</div>
+<!-- Secondary Language Chip Row -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Ewondo (Fang-Beti)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-outline font-label-sm text-label-sm">Courant / Bilingue</span>
+</div>
+</div>
+<!-- Accents & Cultural Regions Tag Cloud -->
+<div class="flex flex-col gap-1.5 pt-1">
+<span class="font-label-sm text-label-sm text-outline">Variantes &amp; Bassins culturels déclarés :</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">location_on</span>
+          Canton Bell / Sawa (Littoral)
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">location_on</span>
+          Bassin du Wouri
+        </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-secondary">location_on</span>
+          Yaoundé Métropole
+        </span>
+</div>
+</div>
+</div>
+<!-- Section 4: Code of Conduct & Safety Commitment -->
+<div class="mb-5 bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Charte Pédagogique &amp; Sûreté</h2>
+<p class="font-body-sm text-body-sm text-outline">Normes de bienveillance et ponctualité</p>
+</div>
+</div>
+<!-- Interactive Custom Checkbox -->
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low cursor-pointer select-none" id="agreement-label">
+<input checked="" class="sr-only peer" id="agreement-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface-container-highest peer-checked:bg-primary text-on-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] hidden peer-checked:block">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+          J'accepte la Charte Pédagogique et de Protection des Apprenants de Nexly.
+        </span>
+<span class="font-body-sm text-body-sm text-outline mt-1 leading-normal">
+          Je m'engage à la tolérance zéro harcèlement, au respect des mineurs et à la ponctualité systématique sur les cours vidéo LiveKit.
+        </span>
+</div>
+</label>
+</div>
+<!-- Sticky Conversion Bottom Bar Area -->
+<div class="mt-2 flex flex-col gap-3">
+<button class="w-full h-12 rounded-xl bg-secondary-container text-on-secondary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all" id="submit-application-btn" type="button">
+<span>Soumettre ma candidature pour validation</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Support Assurance Footnote -->
+<div class="flex items-center justify-center gap-2 text-center text-outline">
+<span class="material-symbols-outlined text-[16px] text-tertiary">support_agent</span>
+<span class="font-body-sm text-body-sm">
+        Revue humaine sous <strong>24h ouvrées</strong>. Accompagnement gratuit de nos conseillers pédagogiques à Douala &amp; Yaoundé.
+      </span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const submitBtn = document.getElementById('submit-application-btn');
+    const agreementCheckbox = document.getElementById('agreement-checkbox');
+    const videoPreviewBox = document.getElementById('video-preview-box');
+
+    if (agreementCheckbox && submitBtn) {
+      agreementCheckbox.addEventListener('change', function(e) {
+        if (!e.target.checked) {
+          submitBtn.classList.add('opacity-50', 'pointer-events-none');
+        } else {
+          submitBtn.classList.remove('opacity-50', 'pointer-events-none');
+        }
+      });
+    }
+
+    if (videoPreviewBox) {
+      videoPreviewBox.addEventListener('click', function() {
+        const playBtn = videoPreviewBox.querySelector('button');
+        if (playBtn) {
+          playBtn.classList.add('scale-125');
+          setTimeout(() => playBtn.classList.remove('scale-125'), 200);
+        }
+      });
+    }
+
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function() {
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = `
+          <div class="w-5 h-5 border-2 border-on-secondary border-t-transparent rounded-full animate-spin"></div>
+          <span>Transmission des dossiers...</span>
+        `;
+        setTimeout(() => {
+          submitBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[20px]">done_all</span>
+            <span>Candidature transmise avec succès !</span>
+          `;
+          submitBtn.classList.remove('bg-secondary-container');
+          submitBtn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+        }, 1200);
+      });
+    }
+  })();
+</script></main></body></html>

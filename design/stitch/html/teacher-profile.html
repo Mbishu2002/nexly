@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-highest": "#dae2fd", "tertiary-fixed": "#89f5e7", "primary": "#003e80", "on-secondary-fixed-variant": "#7a3000", "on-surface-variant": "#424751", "surface-container": "#eaedff", "on-error": "#ffffff", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "secondary": "#a04100", "on-tertiary": "#ffffff", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "on-background": "#131b2e", "on-primary-container": "#b4cdff", "background": "#faf8ff", "on-tertiary-fixed": "#00201d", "on-secondary-container": "#5d2300", "on-primary-fixed-variant": "#00458d", "surface-variant": "#dae2fd", "inverse-primary": "#aac7ff", "on-tertiary-fixed-variant": "#005049", "error": "#ba1a1a", "on-primary-fixed": "#001b3e", "on-surface": "#131b2e", "on-secondary-fixed": "#341000", "primary-fixed": "#d6e3ff", "tertiary-fixed-dim": "#6bd8cb", "surface": "#faf8ff", "error-container": "#ffdad6", "tertiary": "#004842", "surface-tint": "#295ea8", "on-secondary": "#ffffff", "on-tertiary-container": "#72dfd1", "on-primary": "#ffffff", "secondary-fixed-dim": "#ffb693", "outline": "#737782", "surface-bright": "#faf8ff", "tertiary-container": "#00625a", "on-error-container": "#93000a", "secondary-container": "#fc7728", "primary-container": "#1e56a0", "surface-dim": "#d2d9f4", "secondary-fixed": "#ffdbcb", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "outline-variant": "#c2c6d3" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-md": "1rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "margin": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem" }, fontFamily: { "body-sm": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-xl": ["Inter"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Tutor Details</h1></div><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UtxYhdVDBdPV4Rwhh7ZEP7G_zxyKOpSAK9JBt_wY-CZAjnMCSAuR68dMfW0n5LlFFnn5vd0aVTnqNxRJEzrWsR_TM6KiNmy2I3GIFMTpCLBUTb1dSUYbvxpqfZMpPW67ubmHBLLXdNQg6s3RStybycpUUAwNxPk8ui9sEASUwwIDLd_JYqfT4_ac2OqD3tKlfmKGSlQ4-y62R03S2XZXQMi1SClVcrYn8p0O0h5iWHUFJNb-39yn9sBTx73hs390o30vDFHRT_zQ"/></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full pb-24">
+<!-- Video Intro Hero Section -->
+<div class="px-gutter pt-space-sm">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md bg-inverse-surface group">
+<!-- Background Video Thumbnail Mockup -->
+<img class="w-full h-full object-cover" data-alt="A warm, smiling African woman linguistics professor in her late 30s wearing a modern African wax print blazer, sitting in an aesthetic sunlit Yaoundé university study with bookshelves and lush tropical plants in the background, cinematic natural lighting, vibrant Royal Blue and warm amber tones, 8k professional portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzDbQnypsnwg42rE6xn7iQQYZiP_8xwHrgSfMubAGhKCvYmSx4tTTgKrKf2FxwEqJNzb7wlr1ZF1-sy7zbLNEqMuCuKYpbEUZieLK_GvczBY_iSug25kWkdboG0DviWn2XCuhnjfY1WfVVA4lYXmqp7BaU3A8UdzF7aR86Y1EgjAQV1Va7sppwtpgb3cF3h1Luc4fPE39HE44pi7aT-ZbWFcMZuTFhFmHG7Fpr2gp4Abra9J3RgHFI"/>
+<!-- Gradient Scrim for Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent"></div>
+<!-- Video Controls Overlay Top -->
+<div class="absolute top-space-sm inset-x-space-sm flex items-center justify-between">
+<span class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface shadow-sm font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">subtitles</span>
+          FR / EN Subtitles
+        </span>
+<button aria-label="Audio toggle" class="w-8 h-8 rounded-full bg-inverse-surface/70 backdrop-blur-md text-inverse-on-surface flex items-center justify-center hover:bg-inverse-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+</div>
+<!-- Play Button Central Delight Moment -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<button aria-label="Play video introduction" class="pointer-events-auto w-14 h-14 rounded-full bg-secondary text-on-secondary shadow-lg flex items-center justify-center transform active:scale-95 transition-transform hover:scale-105" type="button">
+<span class="material-symbols-outlined text-[32px] translate-x-0.5" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Video Bottom Info Bar -->
+<div class="absolute bottom-space-sm inset-x-space-sm flex items-end justify-between text-inverse-on-surface">
+<div>
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-fixed">Greeting in Duala</p>
+<p class="font-headline-sm text-headline-sm italic">« Mulema mwese, na bè bèli! »</p>
+</div>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded bg-inverse-surface/80 backdrop-blur-sm">
+          1:45
+        </span>
+</div>
+</div>
+</div>
+<!-- Educator Core Identity Card -->
+<div class="px-gutter mt-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<h2 class="font-headline-md text-headline-md text-on-surface">Dr. Henriette Mbassi</h2>
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;" title="Verified Nexly Educator">verified</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-medium">Douala & Ewondo Specialist</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">school</span>
+            PhD in Linguistics • Univ. of Yaoundé I
+          </p>
+</div>
+<!-- Nexly Mascot/Totem Accent Pill -->
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">record_voice_over</span>
+</div>
+</div>
+<!-- Quick Metrics Strip -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center justify-center">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold">4.98</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">124 reviews</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center justify-center">
+<span class="font-label-lg text-label-lg font-bold text-primary">520+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lessons completed</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-center flex flex-col items-center justify-center">
+<div class="flex items-center gap-0.5 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span class="font-label-lg text-label-lg font-bold">~15m</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fast response</span>
+</div>
+</div>
+</div>
+</div>
+<!-- About Me -->
+<div class="px-gutter mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">About Me</h3>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">translate</span> Duala • Ewondo • FR • EN
+      </span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+        Mbote! Hello! I have devoted the past 12 years to researching and teaching Bantu phonology and oral literature at the University of Yaoundé I. Whether you are reconnecting with your ancestral roots from Paris or Montreal, or mastering everyday conversational idioms right here in Douala, my mission is to make our native languages sound natural, expressive, and effortless on your tongue.
+      </p>
+<div class="mt-space-sm pt-space-sm flex items-center gap-space-sm bg-surface-container-low p-2.5 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Specializing in diaspora heritage speakers rebuilding their mother tongue fluency from absolute zero.
+        </p>
+</div>
+</div>
+</div>
+<!-- Subjects & Dialects -->
+<div class="px-gutter mt-space-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-sm">Subjects & Dialects</h3>
+<div class="flex flex-wrap gap-space-xs">
+<div class="bg-primary text-on-primary px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+        Douala (All levels)
+      </div>
+<div class="bg-surface-container-highest text-primary px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+        Ewondo (Beginner to Intermediate)
+      </div>
+<div class="bg-surface-container-highest text-primary px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+        Camfranglais Idioms
+      </div>
+<div class="bg-surface-container-highest text-primary px-3 py-1.5 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+        French Academic Phonetics
+      </div>
+</div>
+</div>
+<!-- Teaching Methodology Bento Card -->
+<div class="px-gutter mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Teaching Methodology</h3>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Interactive • 4 Steps</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Methodology Item 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[20px]">video_camera_front</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">1:1 Live Sessions</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High-bandwidth video calls with accent correction.</p>
+</div>
+</div>
+<!-- Methodology Item 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-secondary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[20px]">style</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Digital Flashcards</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Custom audio decks synced directly to your phone.</p>
+</div>
+</div>
+<!-- Methodology Item 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-tertiary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[20px]">theater_comedy</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Conversational Roleplay</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Simulate Yaoundé market banter and family gatherings.</p>
+</div>
+</div>
+<!-- Methodology Item 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">Cultural Storytelling</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Folktales and proverbs that illuminate tribal context.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Reviews Preview -->
+<div class="px-gutter mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Student Reviews</h3>
+<span class="px-2 py-0.5 bg-surface-container-high text-primary rounded-full font-label-sm text-label-sm">124</span>
+</div>
+<button class="font-label-md text-label-md text-primary hover:underline" type="button">View All</button>
+</div>
+<!-- Review Cards Stack -->
+<div class="flex flex-col gap-space-sm">
+<!-- Review 1: Paris Diaspora -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Close-up portrait of a young Cameroonian-French male professional living in Paris, smiling warmly in a minimalist Parisian studio apartment, natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRhBjJZS0rcpn7Ldb-jLc_4tEA89v--qnu86jl5lrc2klXUSVRla_EtURFCRpXw-rhq7oHb_OX6u8nEYuDQ6ZZvg-HsEMAo2sp0DyEywEqjhmQJ0ZpkXMEbe8PsM4Yh6T8uUvXGqViS-C2gKQcO9kfTKsVM4-FeiAW-yRoOt3bNGXBPoRzx_B-5YX99PSpS2Qtxu_P3CIRj29sIexYits3qAXHId41aPzz56ZUmbW9ZxL9BRdtcPDw"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Cédric N.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Paris, France • Learning Duala</p>
+</div>
+</div>
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+          “Being born abroad, I was always shy about my accent when speaking Duala with my grandparents. Dr. Mbassi broke down the tonality in such a logical way. In just two months, I surprised my entire family over holidays!”
+        </p>
+</div>
+<!-- Review 2: Montreal Diaspora -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of a smiling young Black Canadian woman graduate student in Montreal, casual stylish sweater, warm indoor cafe lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA88LNxx15JufEx-NgyWTb1RaECacSOZYraXAomZ-oWb3VdL1BuorL5Pcf5w9sShX-Ttp-_wzNixGwkS0kRLTX6_7UBhqiCB5PG9S2CaGdbpNMAyp6R8V8eV9ttqBXnz9PDW6xlznAi3O94CsuKNinKdAfnVJNQyp4LZpx64-56-h18N0EW9w6VX5wIK73p-jT3bn7EaQcaYEa2lEEVToNsirCa_exy7TOMOLEWuftU9FHVjnYyrH-G"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Valérie E.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Montreal, Canada • Learning Ewondo</p>
+</div>
+</div>
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+          “Her custom audio notes and roleplays make all the difference. Learning Ewondo feels like having a conversation in my mother's kitchen, not memorizing sterile grammar tables.”
+        </p>
+</div>
+<!-- Review 3: Douala Local -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of a young Central African professional man in business casual shirt in Douala, confident expression, soft modern office backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF1vnvH6Wr_i52ot9UX5dOZjaXTkp1OY6pY-0dJmvGoXRhCVMIJRPyNh2wtgfhNrzGeTuRgV3ix4_wR7aUblDJwfDZELKsSEZi8M19Vs237KoQUNLvyLbDYctyuK6Ej1syeFO2LtX3G5k87vkuDQVDLPs7yXFjopDXljHcQoQxBrSM4T0XO2_zZubYz2MMHzi7QTdHf6f1TFMAc6TeqxKqhLEGM1-DuKmmZfgzWmL2tRwDlwu_6Ngb"/>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Arsène T.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Douala, Cameroon • Camfranglais & Phonetics</p>
+</div>
+</div>
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+          “Unrivalled linguistic expertise. She explains the deep cultural subtext behind slang and ceremonial Duala phrases effortlessly.”
+        </p>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 inset-x-0 bg-surface/95 backdrop-blur-lg shadow-xl px-gutter py-3 z-40 pb-safe">
+<div class="max-w-md mx-auto flex items-center gap-space-sm">
+<!-- Message Teacher Outline Button -->
+<button class="h-12 px-4 rounded-xl bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center gap-1.5 active:bg-surface-container transition-all shrink-0" id="message-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="font-label-lg text-label-lg">Message</span>
+</button>
+<!-- Primary Action CTA Button -->
+<button class="h-12 flex-1 rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary shadow-md flex items-center justify-center gap-2 active:scale-[0.98] transition-all" id="book-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="font-label-lg text-label-lg">Select Lesson Time</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for schedule trigger & tactile touch feedback
+  const bookBtn = document.getElementById('book-btn');
+  const msgBtn = document.getElementById('message-btn');
+
+  if (bookBtn) {
+    bookBtn.addEventListener('click', () => {
+      bookBtn.classList.add('scale-95');
+      setTimeout(() => {
+        bookBtn.classList.remove('scale-95');
+      }, 150);
+    });
+  }
+
+  if (msgBtn) {
+    msgBtn.addEventListener('click', () => {
+      msgBtn.classList.add('scale-95');
+      setTimeout(() => {
+        msgBtn.classList.remove('scale-95');
+      }, 150);
+    });
+  }
+</script></main></body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#faf8ff;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#1e56a0", "inverse-surface": "#283044", "on-tertiary-fixed-variant": "#005049", "surface-variant": "#dae2fd", "primary-fixed": "#d6e3ff", "background": "#faf8ff", "error-container": "#ffdad6", "surface-tint": "#295ea8", "primary-fixed-dim": "#aac7ff", "surface-container-highest": "#dae2fd", "error": "#ba1a1a", "on-background": "#131b2e", "on-tertiary-fixed": "#00201d", "tertiary": "#004842", "outline-variant": "#c2c6d3", "on-primary-fixed": "#001b3e", "on-error-container": "#93000a", "tertiary-container": "#00625a", "on-tertiary-container": "#72dfd1", "on-secondary-container": "#5d2300", "on-tertiary": "#ffffff", "on-secondary-fixed": "#341000", "secondary-fixed-dim": "#ffb693", "surface-container-high": "#e2e7ff", "surface": "#faf8ff", "tertiary-fixed": "#89f5e7", "secondary-container": "#fc7728", "on-surface": "#131b2e", "surface-container-lowest": "#ffffff", "surface-container-low": "#f2f3ff", "on-primary": "#ffffff", "secondary": "#a04100", "on-secondary": "#ffffff", "outline": "#737782", "on-error": "#ffffff", "on-secondary-fixed-variant": "#7a3000", "surface-container": "#eaedff", "surface-bright": "#faf8ff", "tertiary-fixed-dim": "#6bd8cb", "secondary-fixed": "#ffdbcb", "on-primary-container": "#b4cdff", "on-primary-fixed-variant": "#00458d", "on-surface-variant": "#424751", "surface-dim": "#d2d9f4", "primary": "#003e80", "inverse-on-surface": "#eef0ff", "inverse-primary": "#aac7ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-tablet": "1.5rem", "space-md": "1rem", "margin-desktop": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><button aria-label="Retour" class="w-11 h-11 flex items-center justify-center -ml-space-xs text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col items-center flex-1 px-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Choix De Langue</h1><div class="w-24 h-1 bg-surface-container rounded-full mt-space-xs overflow-hidden"><div class="h-full bg-secondary rounded-full w-2/3"></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Passer" class="min-h-[44px] px-space-xs flex items-center justify-center text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors">Passer</button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UtxYhdVDBdPV4Rwhh7ZEP7G_zxyKOpSAK9JBt_wY-CZAjnMCSAuR68dMfW0n5LlFFnn5vd0aVTnqNxRJEzrWsR_TM6KiNmy2I3GIFMTpCLBUTb1dSUYbvxpqfZMpPW67ubmHBLLXdNQg6s3RStybycpUUAwNxPk8ui9sEASUwwIDLd_JYqfT4_ac2OqD3tKlfmKGSlQ4-y62R03S2XZXQMi1SClVcrYn8p0O0h5iWHUFJNb-39yn9sBTx73hs390o30vDFHRT_zQ"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe px-margin bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Step Indicator & Header Info -->
+<div class="pt-4 pb-2">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-secondary font-semibold uppercase tracking-wider">Étape 1 sur 3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Patrimoine & Objectifs</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden mb-5">
+<div class="h-full bg-secondary-container rounded-full w-1/3 transition-all duration-500"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight leading-snug">
+      Quelle langue souhaitez-vous maîtriser ?
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
+      Rejoignez la diaspora et les apprenants locaux qui reconnectent avec leur patrimoine linguistique d'Afrique Centrale.
+    </p>
+</div>
+<!-- Motivational Banner Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-4 my-4 shadow-sm">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young smiling African diaspora student wearing a vibrant modern fabric scarf, warm soft sunlight, warm orange and deep royal blue accents, modern edtech concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOb4-N5JdMYjh9d6xlPMXASZ1lgt41V8caMi50zmhX7xJrGfakm4xf0SrSiDVoLYczOYgnGvuLN2Sgv7iUDpm4w_I-K8FmAi48BhjC44-LC_xKQRHLgrTPY08lSXVuD_4aa9D20fN9DhSj3oMwUte7UXsRncUVnQJsb1ym6Nhr6cfRnE75yyRb50VUt4Re0-8V-v5N8SnrfzScHVaA8juOZ4It7S7ougx24f865jQCdqbbHwlBe4EY"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">+1 420 apprenants ce mois-ci</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">Apprenez avec des locuteurs natifs certifiés au Cameroun.</p>
+</div>
+</div>
+</div>
+<!-- Section: Language Selection Cards -->
+<div class="mt-3">
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold">Langues patrimoniales proposées</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5 dialectes actifs</span>
+</div>
+<div aria-label="Sélection de langue" class="space-y-3" id="language-group" role="radiogroup">
+<!-- Douala (Selected by default) -->
+<label class="group relative flex flex-col p-4 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" id="card-douala">
+<input checked="" class="peer sr-only" name="target_language" type="radio" value="douala"/>
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Vibrant visual of Douala Wouri river bridge at golden sunset with warm orange reflections, lush coastal atmosphere, African city landscape photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCuwxI-iRiAa_1amxXZKnc6jlSoVEyLOoRsevWpM87RprY07igHBKofvMVV4X1Nk24POVeQlIqoOKVFuXCq0l5SNVUyrIAhyxe7x2aKJvH3DhzIE7XmpEX_3wVoCoPhE2NlairwgsALA5k6TO4NhpCZcN-vImhh2_M0WilY3b3dyqAlljcLA5FrRsZume4Kg87W6zarn1aJUD7QcCfnVNQYa2akAPjPGWueUjoH8K8tvgyaRfb1V0"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Douala</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-medium">Sawa / Littoral</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium mt-0.5">38 tuteurs disponibles</p>
+</div>
+</div>
+<!-- Custom Radio Pill -->
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+          Idéal pour le commerce, la musique et les liens familiaux à Douala & diaspora.
+        </p>
+<div class="mt-3 flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+            Très Populaire
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">headphones</span>
+            Audio natif disponible
+          </span>
+</div>
+</label>
+<!-- Ewondo -->
+<label class="group relative flex flex-col p-4 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" id="card-ewondo">
+<input class="peer sr-only" name="target_language" type="radio" value="ewondo"/>
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Traditional terracotta pottery and lush red earth landscape of central Yaounde hills Cameroon, warm cinematic lighting, editorial cultural documentary style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ0CUBgXfSAh7VfkASgawpJgxMj-iAGtau5FxWdkqWfuJac_H5NtVOdXalz2Li9iOZrrZCneAgy_rKZ6L-fPNtEme4TmW6esP2dDuKCIOov-iEJGqakGGGF043I422rgQbjolkJZVjBYdGQm7Tgm5hBQLqoXfhgcbhXZlyDEjtdKVF8KZiqIGP4pxN_9Rf5pH9qD1nYgDnfZVFwvIrR6SW76ROZWF0Xl6Yo_c5WeAy9qgujRdjK5RV"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Ewondo</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Fang-Beti / Centre</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium mt-0.5">24 tuteurs disponibles</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+          Parlé à Yaoundé et dans la région du Centre. Langue historique de communication intercommunautaire.
+        </p>
+</label>
+<!-- Bamiléké / Medumba -->
+<label class="group relative flex flex-col p-4 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" id="card-medumba">
+<input class="peer sr-only" name="target_language" type="radio" value="medumba"/>
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Intricate geometric Ndop royal textile patterns from Western Cameroon Grassfields with deep royal blue and ivory indigo dyes, premium cultural artifact" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAog06PsjE3X8ygDQVpQNlKHAmqtGszVuYTdvmWAXJwSD7FVaxMTVOD8vZIyu_GDiqISoQ6w_mzyh3oKa_QNSMGFRzalaC0UpN_ltjB9QpB0oYgmCxOPRRU_pgGJWQKh9KeEBzirfW54ycsKsvxtEZjZL0dTgAbwGJgc47kuhiuPHg2Kb5ihXk2avu_sW76xS1vwQNhPkOVpw-fmp-Fxyz-JuVODK9IdMWRThSnxEb1KourZVMuEUVq"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Bamiléké / Medumba</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium mt-0.5">19 tuteurs disponibles</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+          Traditions royales, chefferies de l'Ouest et dialectes de transmission générationnelle.
+        </p>
+</label>
+<!-- Bassa -->
+<label class="group relative flex flex-col p-4 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" id="card-bassa">
+<input class="peer sr-only" name="target_language" type="radio" value="bassa"/>
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Bassa</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Littoral & Centre</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium mt-0.5">14 tuteurs disponibles</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+          Histoire culturelle profonde, proverbes ancestraux et liens communautaires forts.
+        </p>
+</label>
+<!-- Camfranglais & Argot Urbain -->
+<label class="group relative flex flex-col p-4 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-200" id="card-camfranglais">
+<input class="peer sr-only" name="target_language" type="radio" value="camfranglais"/>
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors">Camfranglais</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">Urbain</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-medium mt-0.5">9 tuteurs disponibles</p>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-white text-[16px] hidden peer-checked:block">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2.5 leading-relaxed">
+          Pratique informelle, humour et immersion dans la culture pop citadine camerounaise.
+        </p>
+</label>
+</div>
+</div>
+<!-- Section: Motivation & Objectives (Multi-select) -->
+<div class="mt-8">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Vos motivations principales</h3>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Multi-choix</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3.5">
+      Sélectionnez ce qui vous anime pour adapter vos premiers dialogues.
+    </p>
+<div class="flex flex-wrap gap-2.5" id="goals-container">
+<!-- Tag 1: Selected -->
+<button class="tag-chip flex items-center gap-2 px-3.5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-primary text-on-primary shadow-sm" data-selected="true" onclick="toggleTag(this)" type="button">
+<span>Reconnexion aux origines familiales 👨‍👩‍👦</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<!-- Tag 2: Selected -->
+<button class="tag-chip flex items-center gap-2 px-3.5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-primary text-on-primary shadow-sm" data-selected="true" onclick="toggleTag(this)" type="button">
+<span>Conversation fluide avec les grands-parents 🗣️</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<!-- Tag 3: Unselected -->
+<button class="tag-chip flex items-center gap-2 px-3.5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container" data-selected="false" onclick="toggleTag(this)" type="button">
+<span>Voyages & Séjours au Cameroun ✈️</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Tag 4: Unselected -->
+<button class="tag-chip flex items-center gap-2 px-3.5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container" data-selected="false" onclick="toggleTag(this)" type="button">
+<span>Préparation de dot & cérémonies traditionnelles 💍</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+<!-- Tag 5: Unselected -->
+<button class="tag-chip flex items-center gap-2 px-3.5 py-2.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container" data-selected="false" onclick="toggleTag(this)" type="button">
+<span>Apprentissage culturel & chant / musique 🎵</span>
+<span class="material-symbols-outlined text-[16px] hidden">check</span>
+</button>
+</div>
+</div>
+<!-- Section: Self-Assessment Level -->
+<div class="mt-8 mb-6">
+<div class="flex items-center justify-between mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Auto-évaluation actuelle</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Recommandation A1</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+      Soyez rassuré : un court extrait vocal à l'étape suivante confirmera votre niveau sans pression.
+    </p>
+<div aria-label="Niveau initial estimé" class="space-y-2.5" role="radiogroup">
+<!-- Option 1: Débutant complet -->
+<label class="flex items-center justify-between p-3.5 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<input class="sr-only peer" name="level_assessment" type="radio" value="A0"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary">
+<div class="w-2 h-2 rounded-full bg-white hidden peer-checked:block"></div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Débutant complet</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">(A0)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ne parle ni ne comprend aucun mot.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">volume_off</span>
+</label>
+<!-- Option 2: Notions élémentaires (Selected) -->
+<label class="flex items-center justify-between p-3.5 rounded-xl cursor-pointer bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-3">
+<input checked="" class="sr-only peer" name="level_assessment" type="radio" value="A1"/>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-primary font-semibold">Notions élémentaires</span>
+<span class="font-label-sm text-label-sm px-2 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold">A1 · Suggéré</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comprend quelques expressions familières et salutations.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">volume_down</span>
+</label>
+<!-- Option 3: Intermédiaire pratique -->
+<label class="flex items-center justify-between p-3.5 rounded-xl cursor-pointer bg-surface-container-lowest shadow-sm hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<input class="sr-only peer" name="level_assessment" type="radio" value="A2"/>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center peer-checked:bg-primary">
+<div class="w-2 h-2 rounded-full bg-white hidden peer-checked:block"></div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Intermédiaire pratique</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">(A2)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tient des échanges simples sur la vie quotidienne.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">volume_up</span>
+</label>
+</div>
+</div>
+<!-- Bottom Floating Action Card & CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-safe bg-surface/95 backdrop-blur-md shadow-xl z-40">
+<div class="max-w-md mx-auto flex flex-col gap-2.5">
+<!-- Micro info pill -->
+<div class="flex items-center justify-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary">mic</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+          Test de niveau audio gratuit de <span class="font-semibold text-on-surface">2 minutes</span> à l'étape suivante.
+        </p>
+</div>
+<!-- Main CTA Button -->
+<button class="w-full h-12 rounded-xl bg-secondary-container text-white font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.99] transition-all" type="button">
+<span>Continuer vers le diagnostic audio</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function toggleTag(btn) {
+    const isSelected = btn.getAttribute('data-selected') === 'true';
+    const icon = btn.querySelector('.material-symbols-outlined');
+    
+    if (isSelected) {
+      btn.setAttribute('data-selected', 'false');
+      btn.classList.remove('bg-primary', 'text-on-primary');
+      btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      if (icon) icon.classList.add('hidden');
+    } else {
+      btn.setAttribute('data-selected', 'true');
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+      btn.classList.add('bg-primary', 'text-on-primary');
+      if (icon) icon.classList.remove('hidden');
+    }
+  }
+
+  // Visual card selection state feedback for languages
+  const languageCards = document.querySelectorAll('#language-group label');
+  languageCards.forEach(card => {
+    const input = card.querySelector('input[type="radio"]');
+    input.addEventListener('change', () => {
+      languageCards.forEach(c => {
+        c.classList.remove('bg-surface-container-high');
+        c.classList.add('bg-surface-container-lowest');
+        const iconCheck = c.querySelector('.material-symbols-outlined.peer-checked\\:block');
+        if (iconCheck) iconCheck.classList.add('hidden');
+      });
+      if (input.checked) {
+        card.classList.remove('bg-surface-container-lowest');
+        card.classList.add('bg-surface-container-low');
+      }
+    });
+  });
+</script></main></body></html>

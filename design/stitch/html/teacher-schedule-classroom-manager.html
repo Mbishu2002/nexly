@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-container": "#1e56a0", "outline": "#737782", "tertiary-fixed": "#89f5e7", "on-secondary-fixed": "#341000", "inverse-on-surface": "#eef0ff", "primary": "#003e80", "on-primary": "#ffffff", "tertiary-container": "#00625a", "inverse-surface": "#283044", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "on-tertiary-fixed": "#00201d", "primary-fixed-dim": "#aac7ff", "primary-fixed": "#d6e3ff", "on-tertiary-container": "#72dfd1", "error": "#ba1a1a", "on-secondary-container": "#5d2300", "secondary": "#a04100", "surface-container": "#eaedff", "surface-container-highest": "#dae2fd", "surface-variant": "#dae2fd", "surface": "#faf8ff", "tertiary-fixed-dim": "#6bd8cb", "on-secondary": "#ffffff", "background": "#faf8ff", "surface-bright": "#faf8ff", "on-primary-container": "#b4cdff", "on-primary-fixed-variant": "#00458d", "outline-variant": "#c2c6d3", "on-tertiary-fixed-variant": "#005049", "secondary-fixed": "#ffdbcb", "secondary-container": "#fc7728", "surface-container-high": "#e2e7ff", "surface-tint": "#295ea8", "inverse-primary": "#aac7ff", "on-secondary-fixed-variant": "#7a3000", "secondary-fixed-dim": "#ffb693", "on-background": "#131b2e", "on-primary-fixed": "#001b3e", "tertiary": "#004842", "surface-dim": "#d2d9f4", "on-tertiary": "#ffffff", "on-surface-variant": "#424751", "on-surface": "#131b2e", "on-error": "#ffffff", "error-container": "#ffdad6", "surface-container-low": "#f2f3ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-xs": "0.25rem", "margin-desktop": "2rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin": "1rem", "margin-tablet": "1.5rem", "space-sm": "0.5rem", "space-md": "1rem" }, fontFamily: { "body-md": ["Inter"], "label-lg": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-xl": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"] }, fontSize: { "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "500" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">school</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Nexly</span><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">Teacher</span></div><span class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Teacher Schedule</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20 ml-space-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1UtxYhdVDBdPV4Rwhh7ZEP7G_zxyKOpSAK9JBt_wY-CZAjnMCSAuR68dMfW0n5LlFFnn5vd0aVTnqNxRJEzrWsR_TM6KiNmy2I3GIFMTpCLBUTb1dSUYbvxpqfZMpPW67ubmHBLLXdNQg6s3RStybycpUUAwNxPk8ui9sEASUwwIDLd_JYqfT4_ac2OqD3tKlfmKGSlQ4-y62R03S2XZXQMi1SClVcrYn8p0O0h5iWHUFJNb-39yn9sBTx73hs390o30vDFHRT_zQ"/></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-gutter pt-space-md pb-space-lg flex flex-col gap-space-lg">
+<!-- Quick Metrics & Educator Welcome Header -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-space-xs">
+            Bonjour, Dr. Henriette
+            <span class="inline-block animate-bounce text-[20px]">👋</span>
+</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prête pour vos sessions de transmission linguistique aujourd'hui.</p>
+</div>
+</div>
+<!-- Trust Badges & Status Pill -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Tuteur Vérifié Cameroun 🇨🇲
+        </span>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Disponible pour réservations</span>
+</div>
+</div>
+<!-- 3 Stat Metrics Cards -->
+<div class="grid grid-cols-3 gap-space-xs mt-space-xs">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Aujourd'hui</span>
+<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">3 Séances</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 text-[11px] mt-0.5">
+<span class="text-tertiary font-semibold">2 faites</span> • 1 à venir
+            </div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Volume</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">hourglass_top</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">42.5h</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">Ce mois d'activité</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Qualité</span>
+<span class="material-symbols-outlined text-[18px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="mt-2">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">4.98</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant text-[11px] mt-0.5">124 avis reçus</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Imminent Live Class Alert Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary via-primary-container to-primary text-on-primary p-space-md shadow-md">
+<!-- Ambient decorative glow -->
+<div class="absolute -top-8 -right-8 w-32 h-32 bg-secondary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative flex flex-col gap-space-md">
+<!-- Top alert row -->
+<div class="flex items-center justify-between gap-space-xs">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm animate-pulse">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>Dans 45 minutes • 15:30 WAT</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-primary-container font-label-sm text-label-sm bg-primary/40 px-2 py-0.5 rounded-md">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span>Douala SFU: 18ms</span>
+</div>
+</div>
+<!-- Learner details row -->
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm ring-2 ring-on-primary/30" data-alt="Close up portrait of an authentic young Central African male professional student smiling warmly with modern rimless spectacles and navy collar shirt in natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHgJsGktb727bSrWwPywafYuMG4KiyPsvTaUdxVL9tu7izUry9VcQbWlq-LJm6VGn-S3hUVBJm14ELrunG5VxqyI9yZklXFJPVB5JoX9v3ewWK4P3DNJI9QNe8j6QpV5FtGeg-xz0dacSgSWqvo60Qh_6tqDF5Ex5odLkczKEqB4XhfH53pR88Jn9YNvooYxdEDqn0i0aVeThosCYksS7JOtSjQEw7oQ0G82nrB01lmXSLzNtfVQC3"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary rounded-full border-2 border-primary"></span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-bold truncate">Alain Nguemo</h2>
+<span class="px-1.5 py-0.2 rounded text-[10px] font-semibold bg-surface-container-lowest/20 text-on-primary uppercase tracking-wider">A2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container truncate mt-0.5">Douala A2 • Modulations tonales et diphtongues</p>
+<span class="font-label-sm text-label-sm text-on-primary/80 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history_edu</span> Session 8 sur 12 du parcours
+            </span>
+</div>
+</div>
+<!-- Quick actions button stack -->
+<div class="flex flex-col gap-space-xs mt-space-xs">
+<button class="w-full h-12 rounded-lg bg-secondary-container text-on-secondary-container font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-md active:scale-[0.99] transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span>Ouvrir la classe LiveKit</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="h-10 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/20 text-on-primary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">folder_shared</span>
+<span>Fiche &amp; Notes</span>
+</button>
+<button class="h-10 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/20 text-on-primary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Message rapide</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Schedule & Availability Calendar -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Planning des séances</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Semaine active • Heure du Cameroun (WAT)</p>
+</div>
+<!-- View selector pills -->
+<div class="flex bg-surface-container-high rounded-full p-1 text-on-surface-variant">
+<button class="px-3 py-1 rounded-full text-primary font-label-sm text-label-sm bg-surface-container-lowest shadow-sm font-semibold" type="button">Semaine</button>
+<button class="px-3 py-1 rounded-full font-label-sm text-label-sm hover:text-on-surface" type="button">Mois</button>
+</div>
+</div>
+<!-- Weekly Date Strip -->
+<div class="flex items-center justify-between gap-1 overflow-x-auto pb-1">
+<!-- Lun 16 -->
+<button class="flex flex-col items-center justify-center min-w-[48px] py-2.5 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant transition-all hover:bg-surface-container" type="button">
+<span class="font-label-sm text-label-sm">Lun</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-0.5">16</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1"></span>
+</button>
+<!-- Mar 17 -->
+<button class="flex flex-col items-center justify-center min-w-[48px] py-2.5 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant transition-all hover:bg-surface-container" type="button">
+<span class="font-label-sm text-label-sm">Mar</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-0.5">17</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1"></span>
+</button>
+<!-- Mer 18 (Today - Highlighted) -->
+<button class="flex flex-col items-center justify-center min-w-[54px] py-2.5 rounded-xl bg-primary text-on-primary shadow-md" type="button">
+<span class="font-label-sm text-label-sm text-on-primary-container font-medium">Mer</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-primary mt-0.5">18</span>
+<span class="text-[10px] font-bold text-secondary-fixed mt-0.5">Auj.</span>
+</button>
+<!-- Jeu 19 -->
+<button class="flex flex-col items-center justify-center min-w-[48px] py-2.5 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant transition-all hover:bg-surface-container" type="button">
+<span class="font-label-sm text-label-sm">Jeu</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-0.5">19</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1"></span>
+</button>
+<!-- Ven 20 -->
+<button class="flex flex-col items-center justify-center min-w-[48px] py-2.5 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant transition-all hover:bg-surface-container" type="button">
+<span class="font-label-sm text-label-sm">Ven</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-0.5">20</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1"></span>
+</button>
+<!-- Sam 21 -->
+<button class="flex flex-col items-center justify-center min-w-[48px] py-2.5 rounded-xl bg-surface-container-lowest shadow-sm text-on-surface-variant transition-all hover:bg-surface-container" type="button">
+<span class="font-label-sm text-label-sm">Sam</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-0.5">21</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1"></span>
+</button>
+</div>
+<!-- Time Slots Timeline -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Slot 1: Completed with Review -->
+<div class="bg-surface-container-lowest/80 rounded-xl p-space-md shadow-sm flex items-start gap-space-md opacity-85">
+<div class="flex flex-col items-center min-w-[50px] text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">09:00</span>
+<span class="font-label-sm text-label-sm">09:50</span>
+<span class="mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Alain Nguemo</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Terminé
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Initiation Douala • Grammaire fondamentale</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Revue 5.0 reçue: “Excellente pédagogie pratique”</span>
+</div>
+</div>
+</div>
+<!-- Slot 2: Completed with Recording -->
+<div class="bg-surface-container-lowest/80 rounded-xl p-space-md shadow-sm flex items-start gap-space-md opacity-85">
+<div class="flex flex-col items-center min-w-[50px] text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">11:00</span>
+<span class="font-label-sm text-label-sm">11:50</span>
+<span class="mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 truncate">
+<h3 class="font-label-lg text-label-lg font-semibold text-on-surface truncate">Valérie E.</h3>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-[10px] text-on-surface-variant font-medium">Montréal 🇨🇦</span>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Terminé
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Perfectionnement Ewondo • Expressions du quotidien</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="inline-flex items-center gap-1 text-primary hover:underline font-label-sm text-label-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">play_circle</span> Enregistrement prêt (48 min)
+              </button>
+</div>
+</div>
+</div>
+<!-- Slot 3: Imminent Session (Selected/Highlighted) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-md flex items-start gap-space-md bg-gradient-to-r from-primary/5 via-transparent to-transparent">
+<div class="flex flex-col items-center min-w-[50px] text-primary">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">15:30</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">16:20</span>
+<span class="mt-2 text-secondary animate-pulse">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">sensors</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Alain Nguemo</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+                Prochaine séance
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Douala A2 • Modulations tonales</p>
+<div class="mt-2.5 flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 text-[11px] text-tertiary font-medium">
+<span class="material-symbols-outlined text-[14px]">videocam</span> Salle LiveKit configurée
+              </span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="text-[11px] text-on-surface-variant">Documents liés: 3</span>
+</div>
+</div>
+</div>
+<!-- Slot 4: Open Availability Slot -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-md shadow-sm">
+<div class="flex flex-col items-center min-w-[50px] text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">17:00</span>
+<span class="font-label-sm text-label-sm">17:50</span>
+<span class="mt-2 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-semibold text-primary truncate">Créneau Ouvert</h3>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+                Réservable
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ouvert aux apprenants Nexly Pass Web ou abonnements individuels.</p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Réservation instantanée activée
+              </span>
+<button class="text-error hover:underline font-label-sm text-label-sm" type="button">Bloquer ce créneau</button>
+</div>
+</div>
+</div>
+<!-- Slot 5: Blocked slot -->
+<div class="bg-surface-container-high/60 rounded-xl p-space-md flex items-start gap-space-md">
+<div class="flex flex-col items-center min-w-[50px] text-outline">
+<span class="font-label-lg text-label-lg font-semibold">18:30</span>
+<span class="font-label-sm text-label-sm">19:20</span>
+<span class="mt-2 text-outline">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-medium text-on-surface-variant truncate">Bloqué • Pause personnelle</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+                Indisponible
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-0.5">Non visible au catalogue public des apprenants</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Availability Management Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Gestion des créneaux</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Synchronisez vos périodes actives et automatisations</p>
+</div>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Ajouter / Modifier</span>
+</button>
+</div>
+<!-- Pass Web auto-accept toggle card -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mt-0.5">
+<span class="material-symbols-outlined text-[18px]">auto_mode</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Réservations auto avec Nexly Pass Web</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Accepter automatiquement les créneaux confirmés via portail apprenant.</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+</div>
+<!-- Teacher Resource & Pedagogy Shortcut -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface truncate">Fiches phonétiques &amp; Exercices</h3>
+<span class="px-2 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">14 docs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Prêts pour partage instantané sur LiveKit</p>
+</div>
+</div>
+<button aria-label="Consulter les documents" class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- Active Learners Micro-Roster Snapshot -->
+<div class="flex flex-col gap-space-sm mb-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold">Apprenants récurrents cette semaine</h3>
+<a class="font-label-sm text-label-sm text-primary font-medium hover:underline" href="#">Voir liste complète</a>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto pb-1">
+<!-- Learner 1 -->
+<div class="flex items-center gap-2.5 p-2 pr-4 rounded-xl bg-surface-container-lowest shadow-sm shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of an African business professional student smiling casually against a soft out of focus studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8W6tfYPxDjO-LE9G8TZKW9-OS7zVrtuiioD3ISwlteXXLY0IkrpGoTPtSnydrQ8vzwPv8JLsj2lmSCJXIdWESZeIWglZDO8SAK63vjX9awmCVCv8ZKeR1gZ4GlN9lrvImwa-Hncs4QdiOtJ9CPhco1AgY5qufJN_OjeGyYrTZDDtucZXmRQgZo-cPbDI3hCLnjHMtoA9Q3f7zs_Y6LD9jLk7UKoZ7E04P3vLiyOCkKtAJLZdarIGS"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Alain N.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Douala • Niv. A2</span>
+</div>
+</div>
+<!-- Learner 2 -->
+<div class="flex items-center gap-2.5 p-2 pr-4 rounded-xl bg-surface-container-lowest shadow-sm shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of an elegant Cameroonian woman living abroad wearing yellow patterned scarf and warm expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftPreo0QTGHdF5quG1Og1dLETDb1UrxmPcFR7I7f0O4E6RiTwCjEd4aDAmIxvKQO-Ds23u15sArwTo53vRFHAjw62u9dIngOg_GB-kL-8hqTMKDY-AULuz1k37WhIuXLg0y_Tl1MT3yTunOFL0Vfsnju7gNUGrvF4CQoDt4qOPNRTXOx-Io09g91bd7Tm76oGsoWb6x0SIMQXYv7fjHPpWL7LNJ0ToCVUNO6iUQ9KoHiS8ZzfXQm3"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Valérie E.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Ewondo • Niv. B1</span>
+</div>
+</div>
+<!-- Learner 3 -->
+<div class="flex items-center gap-2.5 p-2 pr-4 rounded-xl bg-surface-container-lowest shadow-sm shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait of a young male university student with headphones around his neck smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7S-sTDBSzhZawtcE95mAma6h2uPeBfeRNOCQ2cvG_3n7oF605MhJq6agLjC0YQPOu1kQEt3px9BM8bQGcFTJLyWLdejefXivab4Iz59yvxDW7_UaaX6SkGTNef1x6gV6lD31iq7fan88Zf-bN1y_nvkMmskPEy85VuiUimW99bSwlgY81XipIhRO6GsSw4chHRGsvr8S9x4u2G-50N0b6TvtGbnQ1N3Vtz6llnaCjjuStaDDpkTnX"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Marc K.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Bafia • Niv. A1</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(30,86,160,0.06)]" data-active-classes="text-secondary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 transition-colors text-secondary font-semibold" data-path="teacher-schedule" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm">Planning</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="teacher-classroom" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-sm text-label-sm">Apprenants</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="teacher-earnings" href="#"><span class="material-symbols-outlined text-[24px]">account_balance_wallet</span><span class="font-label-sm text-label-sm">Revenus</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="teacher-profile" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-sm text-label-sm">Profil</span></a></div></nav></body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-highest": "#dae2fd", "tertiary-fixed": "#89f5e7", "primary": "#003e80", "on-secondary-fixed-variant": "#7a3000", "on-surface-variant": "#424751", "surface-container": "#eaedff", "on-error": "#ffffff", "inverse-surface": "#283044", "surface-container-low": "#f2f3ff", "secondary": "#a04100", "on-tertiary": "#ffffff", "surface-container-high": "#e2e7ff", "inverse-on-surface": "#eef0ff", "on-background": "#131b2e", "on-primary-container": "#b4cdff", "background": "#faf8ff", "on-tertiary-fixed": "#00201d", "on-secondary-container": "#5d2300", "on-primary-fixed-variant": "#00458d", "surface-variant": "#dae2fd", "inverse-primary": "#aac7ff", "on-tertiary-fixed-variant": "#005049", "error": "#ba1a1a", "on-primary-fixed": "#001b3e", "on-surface": "#131b2e", "on-secondary-fixed": "#341000", "primary-fixed": "#d6e3ff", "tertiary-fixed-dim": "#6bd8cb", "surface": "#faf8ff", "error-container": "#ffdad6", "tertiary": "#004842", "surface-tint": "#295ea8", "on-secondary": "#ffffff", "on-tertiary-container": "#72dfd1", "on-primary": "#ffffff", "secondary-fixed-dim": "#ffb693", "outline": "#737782", "surface-bright": "#faf8ff", "tertiary-container": "#00625a", "on-error-container": "#93000a", "secondary-container": "#fc7728", "primary-container": "#1e56a0", "surface-dim": "#d2d9f4", "secondary-fixed": "#ffdbcb", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#aac7ff", "outline-variant": "#c2c6d3" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-md": "1rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "margin": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem" }, fontFamily: { "body-sm": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "label-lg": ["Inter"], "headline-xl": ["Inter"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Lesson Booking</h1></div><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UtxYhdVDBdPV4Rwhh7ZEP7G_zxyKOpSAK9JBt_wY-CZAjnMCSAuR68dMfW0n5LlFFnn5vd0aVTnqNxRJEzrWsR_TM6KiNmy2I3GIFMTpCLBUTb1dSUYbvxpqfZMpPW67ubmHBLLXdNQg6s3RStybycpUUAwNxPk8ui9sEASUwwIDLd_JYqfT4_ac2OqD3tKlfmKGSlQ4-y62R03S2XZXQMi1SClVcrYn8p0O0h5iWHUFJNb-39yn9sBTx73hs390o30vDFHRT_zQ"/></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg px-gutter py-space-md">
+<!-- Tutor Mini Summary & Pass Balance Card -->
+<div class="flex flex-col gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="relative w-14 h-14 shrink-0">
+<img class="w-full h-full rounded-full object-cover shadow-sm" data-alt="Close-up portrait of Dr. Henriette Mbassi, an approachable and dignified African woman linguist wearing contemporary Cameroonian patterned attire and glasses, warm ambient studio lighting, friendly scholastic smile, high key modern tech educational portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATZJ92lMJhZeoY9w7cI-hdAoDnTcWgjJTiAbnt0irnb3M3bTThw53c2n0jBS3Ceuxa1OjOuUImZYymReLRJub2XuOYH83CeI4sJEzn5MMCAO_PkBbqyUeCzd449WbsbBCdYe7hymQFq9NOWeC_P-eZ1qZKjPdbOC2O_jU7VCDe9faDpMvaihm_PfW30Y3JjMqupCope28JY2Fhgn0AS6H4Njxf590DHSpURZ6OseK05Xxgy-Uyww5U"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-container rounded-full ring-2 ring-surface-container-lowest"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Dr. Henriette Mbassi</span>
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Dual PhD in African Bantu Linguistics • Douala & French</p>
+</div>
+</div>
+<!-- Pass Indicator (App Store Compliance: Entitlement Balance) -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Nexly Learning Pass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 sessions available</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-primary px-space-sm py-1 rounded-full font-semibold shrink-0">Credit Active</span>
+</div>
+</div>
+<!-- Duration Selector -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Select Duration</span>
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-xl gap-1">
+<button class="duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg text-on-surface-variant transition-all font-label-md text-label-md" id="tab-30" onclick="switchDuration('30')" type="button">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span>30 min trial</span>
+</button>
+<button class="duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm transition-all font-label-md text-label-md" id="tab-50" onclick="switchDuration('50')" type="button">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>50 min standard</span>
+</button>
+</div>
+</div>
+<!-- Timezone Selector with Toggle -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Timezone & Availability</span>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:opacity-80 transition-opacity" id="tz-sync" onclick="toggleAutoTz()" type="button">
+<span class="material-symbols-outlined text-[15px]" id="tz-icon">my_location</span>
+<span id="tz-mode">Detect my timezone</span>
+</button>
+</div>
+<div class="flex items-center justify-between px-space-md py-space-sm bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]">public</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate" id="current-tz-name">Africa/Douala (WAT, GMT+1)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Instructor's Local Time</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Horizontal Date Strip -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Pick a Date</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">September 2024</span>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto pb-2 -mx-gutter px-gutter" style="-webkit-overflow-scrolling: touch;">
+<!-- Wed 18 (Selected) -->
+<button class="date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-primary text-on-primary shadow-md shrink-0 transition-transform active:scale-95" onclick="selectDate(this, 'Wed, 18 Sep')" type="button">
+<span class="font-label-sm text-label-sm opacity-80">TODAY</span>
+<span class="font-headline-md text-headline-md">18</span>
+<span class="font-label-sm text-label-sm">Wed</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container mt-1"></span>
+</button>
+<!-- Thu 19 -->
+<button class="date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm shrink-0 transition-transform active:scale-95" onclick="selectDate(this, 'Thu, 19 Sep')" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SEP</span>
+<span class="font-headline-md text-headline-md">19</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thu</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1"></span>
+</button>
+<!-- Fri 20 -->
+<button class="date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm shrink-0 transition-transform active:scale-95" onclick="selectDate(this, 'Fri, 20 Sep')" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SEP</span>
+<span class="font-headline-md text-headline-md">20</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fri</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1"></span>
+</button>
+<!-- Sat 21 -->
+<button class="date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm shrink-0 transition-transform active:scale-95" onclick="selectDate(this, 'Sat, 21 Sep')" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SEP</span>
+<span class="font-headline-md text-headline-md">21</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sat</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1"></span>
+</button>
+<!-- Sun 22 -->
+<button class="date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm shrink-0 transition-transform active:scale-95" onclick="selectDate(this, 'Sun, 22 Sep')" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SEP</span>
+<span class="font-headline-md text-headline-md">22</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sun</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1"></span>
+</button>
+</div>
+</div>
+<!-- Time Slot Groups -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface">Available Time Slots</span>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-high px-space-sm py-0.5 rounded-full font-semibold" id="selected-date-badge">Wed, 18 Sep</span>
+</div>
+<!-- Morning -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span>Morning</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '09:00 WAT')" type="button">
+<span>09:00</span>
+</button>
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '10:30 WAT')" type="button">
+<span>10:30</span>
+</button>
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '11:30 WAT')" type="button">
+<span>11:30</span>
+</button>
+</div>
+</div>
+<!-- Afternoon -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+<span>Afternoon</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '14:00 WAT')" type="button">
+<span>14:00</span>
+</button>
+<!-- Pre-selected 15:30 in Royal Blue as requested -->
+<button class="slot-btn active-slot h-12 flex items-center justify-center gap-1 bg-primary text-on-primary rounded-xl shadow-md font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '15:30 WAT')" type="button">
+<span>15:30</span>
+<span class="material-symbols-outlined text-[16px] check-icon">check</span>
+</button>
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '16:30 WAT')" type="button">
+<span>16:30</span>
+</button>
+</div>
+</div>
+<!-- Evening -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">bedtime</span>
+<span>Evening</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '18:00 WAT')" type="button">
+<span>18:00</span>
+</button>
+<button class="slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95" onclick="selectSlot(this, '19:30 WAT')" type="button">
+<span>19:30</span>
+</button>
+<div class="h-12 flex items-center justify-center bg-surface-container-low text-outline rounded-xl font-label-sm text-label-sm select-none">
+<span>Booked</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lesson Focus Notes Area -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface" for="lesson-focus">Lesson Focus / Notes</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optional</span>
+</div>
+<div class="relative bg-surface-container-lowest rounded-xl p-space-sm shadow-sm focus-within:bg-surface-container-low transition-colors">
+<textarea class="w-full bg-transparent border-0 outline-none resize-none font-body-md text-body-md text-on-surface placeholder:text-outline" id="lesson-focus" placeholder="What would you like to practice? (e.g. Douala greetings, noun classes, pronunciation)" rows="3"></textarea>
+</div>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">tips_and_updates</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dr. Henriette reviews notes 1 hour prior to session.</span>
+</div>
+</div>
+<!-- Balance & Consumption Notice -->
+<div class="flex flex-col gap-space-xs p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Web Subscription Entitlement</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Enrolled via Web Subscription • 1 lesson credit will be redeemed upon confirmation. No direct payment required.
+      </p>
+</div>
+<!-- Primary Action & Reminder Strip -->
+<div class="flex flex-col gap-space-sm pt-space-xs pb-space-lg">
+<button class="w-full h-12 bg-secondary-container text-on-secondary rounded-xl font-label-lg text-label-lg font-bold shadow-md hover:opacity-95 active:scale-[0.98] transition-all flex items-center justify-center gap-space-sm" id="book-cta" onclick="confirmBooking()" type="button">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+<span>Confirm Booking</span>
+</button>
+<!-- LiveKit Instant Link Notice -->
+<div class="flex items-center justify-center gap-space-xs text-center px-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[16px]">videocam</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          LiveKit high-def video classroom link will be instantly sent via in-app notification.
+        </span>
+</div>
+</div>
+</div>
+<!-- Interactive Logic -->
+<script>
+    let selectedDuration = '50';
+    let selectedDate = 'Wed, 18 Sep';
+    let selectedTime = '15:30 WAT';
+    let isStudentTimezone = false;
+
+    function switchDuration(mins) {
+      selectedDuration = mins;
+      const btn30 = document.getElementById('tab-30');
+      const btn50 = document.getElementById('tab-50');
+
+      if (mins === '30') {
+        btn30.className = 'duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm transition-all font-label-md text-label-md';
+        btn50.className = 'duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg text-on-surface-variant transition-all font-label-md text-label-md';
+      } else {
+        btn50.className = 'duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm transition-all font-label-md text-label-md';
+        btn30.className = 'duration-btn flex items-center justify-center gap-space-xs py-2.5 rounded-lg text-on-surface-variant transition-all font-label-md text-label-md';
+      }
+    }
+
+    function toggleAutoTz() {
+      isStudentTimezone = !isStudentTimezone;
+      const label = document.getElementById('current-tz-name');
+      const mode = document.getElementById('tz-mode');
+      const icon = document.getElementById('tz-icon');
+
+      if (isStudentTimezone) {
+        label.textContent = 'Europe/Paris (CEST, GMT+2)';
+        mode.textContent = 'Reset to Tutor WAT';
+        icon.textContent = 'restore';
+      } else {
+        label.textContent = 'Africa/Douala (WAT, GMT+1)';
+        mode.textContent = 'Detect my timezone';
+        icon.textContent = 'my_location';
+      }
+    }
+
+    function selectDate(element, dateStr) {
+      selectedDate = dateStr;
+      document.querySelectorAll('.date-chip').forEach(btn => {
+        btn.className = 'date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-surface-container-lowest text-on-surface shadow-sm shrink-0 transition-transform active:scale-95';
+        const topSub = btn.children[0];
+        const daySub = btn.children[2];
+        if (topSub) topSub.className = 'font-label-sm text-label-sm text-on-surface-variant';
+        if (daySub) daySub.className = 'font-label-sm text-label-sm text-on-surface-variant';
+      });
+
+      element.className = 'date-chip flex flex-col items-center justify-center min-w-[70px] h-[88px] rounded-xl bg-primary text-on-primary shadow-md shrink-0 transition-transform active:scale-95';
+      element.children[0].className = 'font-label-sm text-label-sm opacity-80';
+      element.children[2].className = 'font-label-sm text-label-sm';
+
+      document.getElementById('selected-date-badge').textContent = dateStr;
+    }
+
+    function selectSlot(element, timeStr) {
+      selectedTime = timeStr;
+      document.querySelectorAll('.slot-btn').forEach(btn => {
+        btn.className = 'slot-btn h-12 flex items-center justify-center gap-1 bg-surface-container-lowest text-on-surface rounded-xl shadow-sm font-label-md text-label-md transition-all active:scale-95';
+        const icon = btn.querySelector('.check-icon');
+        if (icon) icon.remove();
+      });
+
+      element.className = 'slot-btn active-slot h-12 flex items-center justify-center gap-1 bg-primary text-on-primary rounded-xl shadow-md font-label-md text-label-md transition-all active:scale-95';
+      const check = document.createElement('span');
+      check.className = 'material-symbols-outlined text-[16px] check-icon';
+      check.textContent = 'check';
+      element.appendChild(check);
+    }
+
+    function confirmBooking() {
+      const cta = document.getElementById('book-cta');
+      cta.disabled = true;
+      cta.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">autorenew</span><span>Securing Slot...</span>';
+      
+      setTimeout(() => {
+        cta.className = 'w-full h-12 bg-tertiary-container text-on-tertiary rounded-xl font-label-lg text-label-lg font-bold shadow-md flex items-center justify-center gap-space-sm';
+        cta.innerHTML = '<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Lesson Scheduled!</span>';
+      }, 1000);
+    }
+  </script>
+</div></main></body></html>
